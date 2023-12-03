@@ -6,7 +6,7 @@ public class FactorialCalculator {
             throw new IllegalArgumentException("The factorial of a negative number is undefined");
         }
         int factorialOfNum = 1;
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n; i++) {
             factorialOfNum *= i;
         }
         return factorialOfNum;
