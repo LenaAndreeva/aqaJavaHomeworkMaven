@@ -5,10 +5,10 @@ public class FactorialCalculator {
         if (n < 0) {
             throw new IllegalArgumentException("The factorial of a negative number is undefined");
         }
-        int factorial = 1;
+        int factorialOfNum = 1;
         for (int i = 1; i <= n; i++) {
-            factorial *= i;
+            factorialOfNum *= i;
         }
-        return factorial;
+        return factorialOfNum;
     }
 }
