@@ -2,6 +2,7 @@ package org.andreevaelena.homework;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 public class FactorialCalculatorTest {
     @Test(description = "Calculating the factorial of 0")
     public void testFactorialOfZero() {
