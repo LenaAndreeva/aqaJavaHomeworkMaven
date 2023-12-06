@@ -1,4 +1,4 @@
-package org.andreevaelena.homework;
+package org.andreevaelena.homework.testsForMtsSite;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
