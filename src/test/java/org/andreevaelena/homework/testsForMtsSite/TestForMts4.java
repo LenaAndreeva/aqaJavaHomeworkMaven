@@ -26,10 +26,11 @@ public class TestForMts4 {
 
         WebElement fieldForNum = driver.findElement(By.xpath("//input[@id='connection-phone']"));
         WebElement fieldForPaymentAmount = driver.findElement(By.xpath("//input[@id='connection-sum']"));
-        WebElement continueButton = driver.findElement(By.cssSelector("form[id='pay-connection'] button[type='submit']"));
 
         fieldForNum.sendKeys("297777777");
         fieldForPaymentAmount.sendKeys("5");
+
+        WebElement continueButton = driver.findElement(By.cssSelector("form[id='pay-connection'] button[type='submit']"));
         continueButton.click();
 
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20));
