@@ -21,7 +21,7 @@ public class TestForMts4 {
         driver.get("https://www.mts.by/");
         
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement cookieCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='cookie__close']")));
+        WebElement cookieCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn_black cookie__ok']")));
         cookieCloseBtn.click();
 
         WebElement fieldForNum = driver.findElement(By.xpath("//input[@id='connection-phone']"));
@@ -42,11 +42,5 @@ public class TestForMts4 {
         Assertions.assertTrue(field.isDisplayed());
         driver.switchTo().defaultContent();
         driver.quit();
-
-
-        /*Instead of accepting cookie we can also use:
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 200);"); */
     }
 }

@@ -18,17 +18,19 @@ public class TestForMts3 {
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         driver.get("https://www.mts.by/");
 
         WebElement link = driver.findElement(By.cssSelector("a[href='/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/']"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement cookieCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn_black cookie__ok']")));
+        cookieCloseBtn.click();
 
         String currentUrl = driver.getCurrentUrl();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(link));
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait2.until(ExpectedConditions.elementToBeClickable(link));
         link.click();
 
         String newUrl = driver.getCurrentUrl();
