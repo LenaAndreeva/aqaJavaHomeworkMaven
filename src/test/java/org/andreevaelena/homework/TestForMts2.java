@@ -22,6 +22,6 @@ public class TestForMts2 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement amountDisplayed = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[@class='header__payment-amount']")));
         String amountText = amountDisplayed.getText().replaceAll("\\s+", " ");;
-        Assertions.assertTrue(amountText.contains("5.00 BYN"), "Сумма отображается некорректно");
+        Assertions.assertTrue(amountText.contains("5.00 BYN"));
     }
 }

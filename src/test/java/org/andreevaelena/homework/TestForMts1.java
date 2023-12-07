@@ -29,7 +29,7 @@ public class TestForMts1 {
 
         for (int i = 0; i < options.size(); i++) {
             String actualOption = options.get(i).getText();
-            Assertions.assertEquals(expectedOptions[i], actualOption, "Название пункта не соответствует ожидаемому");
+            Assertions.assertEquals(expectedOptions[i], actualOption);
         }
     }
 }
