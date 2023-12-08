@@ -12,7 +12,7 @@ import java.util.*;
 
 import java.time.Duration;
 
-public class TestForFields {
+public class TestForFieldsText {
 
     @Test
     public void testFieldsText() {
