@@ -25,5 +25,6 @@ public class TestPhoneNumberInfo {
         String phoneNumberText = phoneNumberDisplayed.getText().replaceAll("\\s+", " ");
 
         Assertions.assertTrue(phoneNumberText.contains(FrameTextsData.PHONE_NUMBER_TEXT));
+        driver.quit();
     }
 }

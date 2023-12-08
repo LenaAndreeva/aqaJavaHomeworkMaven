@@ -39,6 +39,7 @@ public class TestCardNumberFieldIcons {
         }
 
         Assertions.assertFalse(foundLogos.isEmpty());
+        driver.quit();
     }
 }
 

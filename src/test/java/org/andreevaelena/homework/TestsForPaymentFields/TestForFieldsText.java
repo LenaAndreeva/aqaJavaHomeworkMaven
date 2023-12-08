@@ -43,5 +43,6 @@ public class TestForFieldsText {
     }
 
     Assertions.assertEquals(expectedTexts, actualTexts);
+    driver.quit();
 }
 }

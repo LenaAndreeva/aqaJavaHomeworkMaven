@@ -24,5 +24,6 @@ public class TestDisplayingThePaymentAmount {
         String paymentAmountDisplayedText = paymentAmountDisplayed.getText();
 
         Assertions.assertTrue(paymentAmountDisplayedText.contains(FrameTextsData.PAYMENT_AMOUNT));
+        driver.quit();
     }
 }

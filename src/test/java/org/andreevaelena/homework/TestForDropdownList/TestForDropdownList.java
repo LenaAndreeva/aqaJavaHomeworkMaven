@@ -34,5 +34,7 @@ public class TestForDropdownList {
 
             Assertions.assertEquals(expectedOptions[i], actualOption);
         }
+
+        driver.quit();
     }
 }

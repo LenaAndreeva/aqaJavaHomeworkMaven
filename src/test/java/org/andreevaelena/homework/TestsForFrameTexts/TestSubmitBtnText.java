@@ -24,5 +24,6 @@ public class TestSubmitBtnText {
         String submitButtonText = submitButton.getText().replaceAll("\\s+", " ");
 
         Assertions.assertTrue(submitButtonText.contains(FrameTextsData.SUBMIT_BUTTON_TEXT));
+        driver.quit();
     }
 }
