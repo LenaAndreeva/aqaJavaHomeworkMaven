@@ -13,21 +13,25 @@ import java.util.List;
 public class WebPageManager {
     private WebDriver driver;
 
+    public void visitMtsSiteAndFillInPaymentFields() {
+        visitMtsHomePage();
+        fillInThePaymentFields();
+    }
+
     public WebDriver initializeChromeDriver() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         return driver;
     }
 
-    public void visitMtsHomePage(WebDriver driver) {
+    public void visitMtsHomePage() {
         driver.get("https://www.mts.by/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement cookieCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn_black cookie__ok']")));
         cookieCloseBtn.click();
     }
-    public void fillInThePaymentFields (WebDriver driver) {
+    public void fillInThePaymentFields () {
         WebElement fieldForNum = driver.findElement(By.xpath("//input[@id='connection-phone']"));
         WebElement fieldForPaymentAmount = driver.findElement(By.xpath("//input[@id='connection-sum']"));
         fieldForNum.sendKeys("297777777");
