@@ -2,6 +2,7 @@ package org.andreevaelena.homework.TestsForPaymentFields;
 
 import org.andreevaelena.homework.WebPageManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ import java.util.List;
 public class TestCardNumberFieldIcons {
 
     @Test
+    @DisplayName("Проверка наличия логотипов банковских карт внутри поля 'Номер карты' во фрейме")
     public void testCardNumberFieldIcons() {
 
         WebPageManager webPageManager = new WebPageManager();

@@ -2,6 +2,7 @@ package org.andreevaelena.homework.TestsForFrameTexts;
 
 import org.andreevaelena.homework.WebPageManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import java.time.Duration;
 public class TestPhoneNumberInfo {
 
     @Test
+    @DisplayName("Проверка отображения введенного номера телефона во фрейме")
     public void testPhoneNumberInformation() {
 
         WebPageManager webPageManager = new WebPageManager();

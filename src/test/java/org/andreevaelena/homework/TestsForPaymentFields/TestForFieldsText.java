@@ -2,6 +2,7 @@ package org.andreevaelena.homework.TestsForPaymentFields;
 
 import org.andreevaelena.homework.WebPageManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ import java.time.Duration;
 public class TestForFieldsText {
 
     @Test
+    @DisplayName("Проверка надписей внутри полей для проведения оплаты во фрейме")
     public void testFieldsText() {
 
         WebPageManager webPageManager = new WebPageManager();

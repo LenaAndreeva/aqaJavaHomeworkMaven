@@ -2,6 +2,7 @@ package org.andreevaelena.homework.TestsForFrameTexts;
 
 import org.andreevaelena.homework.WebPageManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import java.time.Duration;
 
 public class TestSubmitBtnText {
     @Test
+    @DisplayName("Проверка текста на кнопке для оплаты внутри фрейма")
     public void testSubmitBtnText() {
 
         WebPageManager webPageManager = new WebPageManager();

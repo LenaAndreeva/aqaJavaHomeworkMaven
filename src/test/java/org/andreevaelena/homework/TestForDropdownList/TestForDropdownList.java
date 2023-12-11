@@ -2,6 +2,7 @@ package org.andreevaelena.homework.TestForDropdownList;
 
 import org.andreevaelena.homework.WebPageManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import java.util.List;
 
 public class TestForDropdownList {
     @Test
+    @DisplayName("Проверка наличия всех опций в выпадающем списке")
     public void testPaymentDropdownListItems() {
 
         WebPageManager webPageManager = new WebPageManager();
