@@ -23,7 +23,7 @@ public class TestDisplayingThePaymentAmount {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement paymentAmountDisplayed = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[@class='header__payment-amount']")));
-        String paymentAmountDisplayedText = paymentAmountDisplayed.getText();
+        String paymentAmountDisplayedText = paymentAmountDisplayed.getText().replaceAll("\\s+", " ");
 
         Assertions.assertTrue(paymentAmountDisplayedText.contains(FrameTextsData.PAYMENT_AMOUNT));
         driver.quit();

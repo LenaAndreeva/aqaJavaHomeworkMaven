@@ -22,6 +22,7 @@ public class WebPageManager {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         return driver;
     }
 

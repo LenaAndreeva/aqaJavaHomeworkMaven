@@ -22,7 +22,6 @@ public class TestForInstallmentFields {
 
         WebPageManager webPageManager = new WebPageManager();
         WebDriver driver = webPageManager.initializeChromeDriver();
-        driver.manage().window().maximize();
         webPageManager.visitMtsHomePage();
 
         WebElement dropdownBtn = driver.findElement(By.xpath("//span[@class='select__arrow']//*[name()='svg']"));
