@@ -19,10 +19,23 @@ public class WebPageManager {
     }
 
     public WebDriver initializeChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+
+        String os = System.getProperty("os.name").toLowerCase();
+        String driverPath;
+
+        if (os.contains("win")) {
+            driverPath = "src/main/resources/chromedriver.exe";
+        } else if (os.contains("nux"))  {
+            driverPath = "src/main/resources/chromedriver-linux64/chromedriver";
+        } else {
+            throw new IllegalStateException("There is no driver for this operating system");
+        }
+
+        System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+
         return driver;
     }
 
