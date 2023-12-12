@@ -19,10 +19,6 @@ public class TestToCompareTheNumberOfProducts extends BaseTest {
                 .goToCart();
         cartPage
                 .compareNumberOfProducts();
-        v
-
-
-
 
     }
 }
