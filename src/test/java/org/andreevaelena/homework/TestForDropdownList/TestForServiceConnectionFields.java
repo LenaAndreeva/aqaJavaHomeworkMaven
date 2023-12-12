@@ -1,6 +1,6 @@
 package org.andreevaelena.homework.TestForDropdownList;
 
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,15 +11,14 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-public class TestForServiceConnectionFields {
+public class TestForServiceConnectionFields extends BaseTests {
 
     @Test
     @DisplayName("Проверка надписей в незаполненных полях в блоке 'Услуги связи'")
     public void testServiceConnectionFieldsText() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsHomePage();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsHomePage();
 
         WebElement phoneNumberField = driver.findElement(By.xpath("//input[@id='connection-phone']"));
         WebElement paymentAmountField = driver.findElement(By.xpath("//input[@id='connection-sum']"));
@@ -27,9 +26,9 @@ public class TestForServiceConnectionFields {
 
         List<WebElement> fields = Arrays.asList(phoneNumberField, paymentAmountField, emailField);
         List<String> expectedFieldsText = Arrays.asList(
-                "Номер телефона",
-                "Сумма",
-                "E-mail для отправки чека"
+                DropdownListOptionsData.SERVICE_CONNECTION_PHONE_NUM,
+                DropdownListOptionsData.SERVICE_CONNECTION_SUM,
+                DropdownListOptionsData.SERVICE_CONNECTION_EMAIL
         );
         List<String> actualFieldsText = new ArrayList<>();
         for (WebElement field : fields) {

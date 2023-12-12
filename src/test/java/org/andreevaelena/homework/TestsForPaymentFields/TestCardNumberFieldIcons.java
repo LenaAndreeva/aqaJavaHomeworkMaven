@@ -1,6 +1,6 @@
 package org.andreevaelena.homework.TestsForPaymentFields;
 
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,15 +15,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestCardNumberFieldIcons {
+public class TestCardNumberFieldIcons extends BaseTests {
 
     @Test
     @DisplayName("Проверка наличия логотипов банковских карт внутри поля 'Номер карты' во фрейме")
     public void testCardNumberFieldIcons() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsSiteAndFillInPaymentFields();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsSiteAndFillInPaymentFields();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement iconsContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='icons-container ng-tns-c47-1']")));

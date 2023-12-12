@@ -1,6 +1,6 @@
 package org.andreevaelena.homework.TestForDropdownList;
 
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,14 +10,13 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class TestForDropdownList {
+public class TestForDropdownList extends BaseTests {
     @Test
     @DisplayName("Проверка наличия всех опций в выпадающем списке")
     public void testPaymentDropdownListItems() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsHomePage();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsHomePage();
 
         WebElement dropdownBtn = driver.findElement(By.xpath("//span[@class='select__arrow']//*[name()='svg']"));
         dropdownBtn.click();

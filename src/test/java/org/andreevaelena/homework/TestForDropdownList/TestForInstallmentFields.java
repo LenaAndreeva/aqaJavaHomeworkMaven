@@ -1,5 +1,5 @@
 package org.andreevaelena.homework.TestForDropdownList;
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,15 +14,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestForInstallmentFields {
+public class TestForInstallmentFields extends BaseTests{
 
     @Test
     @DisplayName("Проверка надписей в незаполненных полях в блоке 'Рассрочка'")
     public void testInstallmentFieldsText() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsHomePage();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsHomePage();
 
         WebElement dropdownBtn = driver.findElement(By.xpath("//span[@class='select__arrow']//*[name()='svg']"));
         WebElement InstallmentBtn = driver.findElement(By.xpath("//p[contains(text(),'Рассрочка')]"));
@@ -36,9 +35,9 @@ public class TestForInstallmentFields {
 
         List<WebElement> fields = Arrays.asList(accountNumberField, paymentAmountField, emailField);
         List<String> expectedFieldsText = Arrays.asList(
-                "Номер счета на 44",
-                "Сумма",
-                "E-mail для отправки чека"
+                DropdownListOptionsData.INSTALLMENT_ACCOUNT_NUM,
+                DropdownListOptionsData.INSTALLMENT_SUM,
+                DropdownListOptionsData.INSTALLMENT_EMAIL
         );
 
         List<String> actualFieldsText = new ArrayList<>();

@@ -1,6 +1,6 @@
 package org.andreevaelena.homework.TestForDropdownList;
 
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,14 +14,13 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-public class TestForHomeInternetFields {
+public class TestForHomeInternetFields extends BaseTests {
     @Test
     @DisplayName("Проверка надписей в незаполненных полях в блоке 'Домашний интернет'")
     public void testHomeInternetFieldsText() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsHomePage();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsHomePage();
 
         WebElement dropdownBtn = driver.findElement(By.xpath("//span[@class='select__arrow']//*[name()='svg']"));
         WebElement homeInternetBtn = driver.findElement(By.cssSelector("div[id='pay-section'] li:nth-child(2) p:nth-child(1)"));
@@ -35,9 +34,9 @@ public class TestForHomeInternetFields {
 
         List<WebElement> fields = Arrays.asList(phoneNumberField, paymentAmountField, emailField);
         List<String> expectedFieldsText = Arrays.asList(
-                "Номер абонента",
-                "Сумма",
-                "E-mail для отправки чека"
+                DropdownListOptionsData.HOME_INTERNET_PHONE_NUM,
+                DropdownListOptionsData.HOME_INTERNET_SUM,
+                DropdownListOptionsData.HOME_INTERNET_EMAIL
         );
 
         List<String> actualFieldsText = new ArrayList<>();

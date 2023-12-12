@@ -1,6 +1,6 @@
 package org.andreevaelena.homework.TestsForPaymentFields;
 
-import org.andreevaelena.homework.WebPageManager;
+import org.andreevaelena.homework.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,25 +13,22 @@ import java.util.*;
 
 import java.time.Duration;
 
-public class TestForFieldsText {
+public class TestForFieldsText extends BaseTests {
 
     @Test
     @DisplayName("Проверка надписей внутри полей для проведения оплаты во фрейме")
     public void testFieldsText() {
 
-        WebPageManager webPageManager = new WebPageManager();
-        WebDriver driver = webPageManager.initializeChromeDriver();
-        webPageManager.visitMtsHomePage();
-        webPageManager.fillInThePaymentFields();
+        WebDriver driver = initializeChromeDriver();
+        visitMtsSiteAndFillInPaymentFields();
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement cardNumInputField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='content ng-tns-c47-1']")));
+        WebElement cardValidityPeriodField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-4 ng-star-inserted']")));
+        WebElement cvcField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-5 ng-star-inserted']")));
+        WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-3 ng-star-inserted']")));
 
-    WebElement cardNumInputField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='content ng-tns-c47-1']")));
-    WebElement cardValidityPeriodField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-4 ng-star-inserted']")));
-    WebElement cvcField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-5 ng-star-inserted']")));
-    WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@class='ng-tns-c47-3 ng-star-inserted']")));
-
-    List<WebElement> fields = Arrays.asList(cardNumInputField, cardValidityPeriodField, cvcField, nameField);
+        List<WebElement> fields = Arrays.asList(cardNumInputField, cardValidityPeriodField, cvcField, nameField);
         List<String> expectedTexts = Arrays.asList(
                 FieldsTextData.CARD_NUMBER,
                 FieldsTextData.VALIDITY_PERIOD,
@@ -39,12 +36,12 @@ public class TestForFieldsText {
                 FieldsTextData.HOLDER_NAME
         );
 
-    List<String> actualTexts = new ArrayList<>();
-    for (WebElement field : fields) {
+        List<String> actualTexts = new ArrayList<>();
+        for (WebElement field : fields) {
         actualTexts.add(field.getText());
-    }
+        }
 
-    Assertions.assertEquals(expectedTexts, actualTexts);
-    driver.quit();
-}
+        Assertions.assertEquals(expectedTexts, actualTexts);
+        driver.quit();
+    }
 }
