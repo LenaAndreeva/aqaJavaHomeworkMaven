@@ -1,10 +1,10 @@
-package org.andreevaelena.homework.base;
+package org.andreevaelena.homework;
 
 import org.andreevaelena.homework.general.GeneralActions;
 import org.andreevaelena.homework.pages.BasePage;
 import org.andreevaelena.homework.pages.CartPage;
 import org.andreevaelena.homework.pages.WildberriesHomePage;
-import org.andreevaelena.homework.pages.productsListPage.WbProductsListPage;
+import org.andreevaelena.homework.pages.WbProductsListPage;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {

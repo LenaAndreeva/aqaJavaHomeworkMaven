@@ -1,5 +1,4 @@
 package org.andreevaelena.homework;
-import org.andreevaelena.homework.base.BaseTest;
 import org.junit.jupiter.api.Test;
 
 public class TestToCompareTheNumberOfProducts extends BaseTest {
