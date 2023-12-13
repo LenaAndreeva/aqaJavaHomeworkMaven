@@ -12,16 +12,16 @@ public class TestToCompareTotalAmountOfProducts extends BaseTest {
     public void testTheCorrectDisplayOfTheTotalAmountOfProducts() throws InterruptedException {
         basePage.openPage(WILDBERRIES_HOME_PAGE);
 
-        wbHomePage
+        wbHeader
                 .enterTheProductNameInTheSearchField();
         wbProductsListPage
+                .sortProducts()
                 .addProduct1ToShoppingCart()
                 .addProduct2ToShoppingCart()
                 .addProduct3ToShoppingCart();
-        wbHomePage
+        wbHeader
                 .goToCart();
         wbCartPage
                 .compareTotalAmountOfProducts();
-
     }
 }

@@ -10,13 +10,14 @@ public class TestToCheckProductPrices extends BaseTest {
     public void testProductPricesInTheCart() throws InterruptedException {
         basePage.openPage(WILDBERRIES_HOME_PAGE);
 
-        wbHomePage
+        wbHeader
                 .enterTheProductNameInTheSearchField();
         wbProductsListPage
+                .sortProducts()
                 .addProduct1ToShoppingCart()
                 .addProduct2ToShoppingCart()
                 .addProduct3ToShoppingCart();
-        wbHomePage
+        wbHeader
                 .goToCart();
         wbCartPage
                 .compareProductPrices();

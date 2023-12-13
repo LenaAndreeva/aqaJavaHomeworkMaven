@@ -11,9 +11,9 @@ public class ProjectData {
     }
 
     public static class ProductsNamesData {
-        public static final String PRODUCT_NAME1 = "Светильник настольный светодиодный для дома и офиса";
-        public static final String PRODUCT_NAME2 = "Лампа настольная светодиодная светильник на стол";
-        public static final String PRODUCT_NAME3 = "Лампа настольная светодиодная светильник на стол";
+        public static final String PRODUCT_NAME1 = "Led лампа настольная светодиодная для дома и офиса";
+        public static final String PRODUCT_NAME2 = "Лампа настольная для школьника на струбцине светодиодная";
+        public static final String PRODUCT_NAME3 = "Лампа настольная сенсорная";
     }
 
     public static class NumOfProductsData {
@@ -21,9 +21,9 @@ public class ProjectData {
     }
 
     public static class ProductsPrices {
-        public static final int PRODUCT_PRICE_1 = 450;
-        public static final int PRODUCT_PRICE_2 = 708;
-        public static final int PRODUCT_PRICE_3 = 501;
-        public static final int TOTAL_AMOUNT = 1659;
+        public static final int PRODUCT_PRICE_1 = 2689;
+        public static final int PRODUCT_PRICE_2 = 2270;
+        public static final int PRODUCT_PRICE_3 = 945;
+        public static final int TOTAL_AMOUNT = 5904;
     }
 }

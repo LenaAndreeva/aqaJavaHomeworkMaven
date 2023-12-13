@@ -12,15 +12,29 @@ public class WbProductsListPage extends BasePage {
         super(driver);
     }
 
- private final By getproduct1 = By.xpath("//article[@id='c67296866']//a[@aria-label='Лампа настольная светодиодная светильник на стол Light&Style']");
- private final By getProduct2 = By.xpath("//article[@id='c109428224']//a[contains(@aria-label,'Лампа настольная светодиодная светильник на стол Light&Style')]");
- private final By getProduct3 = By.xpath("//a[contains(@aria-label,'Светильник настольный светодиодный для дома и офиса LightHaven')]");
-
- private final By getAddProduct1Btn = By.xpath("//article[@id='c67296866']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
- private final By getAddProduct2Btn = By.xpath("//article[@id='c109428224']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
- private final By getGetAddProduct3Btn = By.xpath("//article[@id='c170255264']//a[@class='product-card__add-basket j-add-to-basket btn-main-sm']");
 
 
+ private final By getSortDropdownBtn = By.cssSelector(".dropdown-filter__btn.dropdown-filter__btn--sorter");
+ private final By getSortByRatingBtn = By.xpath("//li[2]//div[1]//span[1]");
+ private final By getproduct1 = By.xpath("//article[@id='c65848828']//a[contains(@aria-label,'Лампа настольная сенсорная Cosmo Group')]");
+ private final By getProduct2 = By.xpath("//a[contains(@aria-label,'Лампа настольная для школьника на струбцине светодиодная Real Master')]");
+ private final By getProduct3 = By.xpath("//article[@id='c90033232']//a[contains(@aria-label,'Led лампа настольная светодиодная для дома и офиса LunaLight')]");
+
+ private final By getAddProduct1Btn = By.xpath("//article[@id='c65848828']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
+ private final By getAddProduct2Btn = By.xpath("//article[@id='c65906646']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
+ private final By getGetAddProduct3Btn = By.xpath("//article[@id='c90033232']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
+
+
+
+   public WbProductsListPage sortProducts() {
+       WebElement sortDropdownBtn = driver.findElement(getSortDropdownBtn);
+       waitElementIsVisible(sortDropdownBtn).click();
+
+       WebElement sortByRatingBtn = driver.findElement(getSortByRatingBtn);
+       waitElementIsVisible(sortByRatingBtn).click();
+
+       return this;
+   }
 
     public WbProductsListPage addProduct1ToShoppingCart () {
 

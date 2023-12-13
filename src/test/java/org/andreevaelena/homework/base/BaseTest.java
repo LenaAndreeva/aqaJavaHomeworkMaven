@@ -12,7 +12,7 @@ public class BaseTest {
 
     protected WebDriver driver = GeneralActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
-    protected WbHeader wbHomePage = new WbHeader(driver);
+    protected WbHeader wbHeader = new WbHeader(driver);
     protected WbProductsListPage wbProductsListPage = new WbProductsListPage(driver);
     protected WbCartPage wbCartPage = new WbCartPage(driver);
 
