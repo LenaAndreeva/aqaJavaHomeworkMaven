@@ -24,7 +24,7 @@ public class WbHeader extends BasePage {
         Thread.sleep(5000);
         waitElementIsVisible(searchField).sendKeys(SEARCH_PRODUCT_NAME);
         searchField.sendKeys(Keys.ENTER);
-        Thread.sleep(15000);
+        Thread.sleep(10000);
 
         return this;
     }
