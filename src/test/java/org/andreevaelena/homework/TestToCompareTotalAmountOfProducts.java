@@ -1,14 +1,15 @@
 package org.andreevaelena.homework;
+
 import org.andreevaelena.homework.base.BaseTest;
+import org.andreevaelena.homework.general.ProjectData;
 import org.junit.Test;
 
 import static org.andreevaelena.homework.general.ProjectData.Urls.*;
 
-public class TestToCompareTheNumberOfProducts extends BaseTest {
+public class TestToCompareTotalAmountOfProducts extends BaseTest {
 
     @Test
-    public void compareNumOfProducts() throws InterruptedException {
-
+    public void testTheCorrectDisplayOfTheTotalAmountOfProducts() throws InterruptedException {
         basePage.openPage(WILDBERRIES_HOME_PAGE);
 
         wbHomePage
@@ -20,7 +21,7 @@ public class TestToCompareTheNumberOfProducts extends BaseTest {
         wbHomePage
                 .goToCart();
         wbCartPage
-                .compareNumOfProductInTheCart();
+                .compareTotalAmountOfProducts();
 
     }
 }

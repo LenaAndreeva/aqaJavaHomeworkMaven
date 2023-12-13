@@ -1,25 +1,28 @@
 package org.andreevaelena.homework;
 
-import org.junit.jupiter.api.Test;
+import org.andreevaelena.homework.base.BaseTest;
+import org.junit.Test;
 
-public class TestForComparisonOfProductNames extends BaseTest {
+import static org.andreevaelena.homework.general.ProjectData.Urls.*;
+
+
+public class TestToCompareProductNames extends BaseTest {
 
 
     @Test
     public void compareProductNames() throws InterruptedException {
-        basePage.openPage("https://www.wildberries.ru");
+        basePage.openPage(WILDBERRIES_HOME_PAGE);
 
-        wildberriesHomePage
+        wbHomePage
                 .enterTheProductNameInTheSearchField();
         wbProductsListPage
                 .addProduct1ToShoppingCart()
                 .addProduct2ToShoppingCart()
                 .addProduct3ToShoppingCart();
-        wildberriesHomePage
+        wbHomePage
                 .goToCart();
-        cartPage
-                .compareProductsNames();
-
+        wbCartPage
+                .compareProductNames();
     }
 
 }

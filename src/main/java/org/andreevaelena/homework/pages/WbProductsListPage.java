@@ -1,5 +1,6 @@
 package org.andreevaelena.homework.pages;
 
+import org.andreevaelena.homework.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,11 +14,11 @@ public class WbProductsListPage extends BasePage {
 
  private final By getproduct1 = By.xpath("//article[@id='c67296866']//a[@aria-label='Лампа настольная светодиодная светильник на стол Light&Style']");
  private final By getProduct2 = By.xpath("//article[@id='c109428224']//a[contains(@aria-label,'Лампа настольная светодиодная светильник на стол Light&Style')]");
- private final By getProduct3 = By.xpath("//a[contains(@aria-label,'Лампа Настольная Беспроводная для дома и офиса Homely store')]");
+ private final By getProduct3 = By.xpath("//a[contains(@aria-label,'Светильник настольный светодиодный для дома и офиса LightHaven')]");
 
  private final By getAddProduct1Btn = By.xpath("//article[@id='c67296866']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
  private final By getAddProduct2Btn = By.xpath("//article[@id='c109428224']//a[contains(@class,'product-card__add-basket j-add-to-basket btn-main-sm')]");
- private final By getGetAddProduct3Btn = By.xpath("//article[@id='c182832631']//a[@class='product-card__add-basket j-add-to-basket btn-main-sm']");
+ private final By getGetAddProduct3Btn = By.xpath("//article[@id='c170255264']//a[@class='product-card__add-basket j-add-to-basket btn-main-sm']");
 
 
 
@@ -63,25 +64,4 @@ public class WbProductsListPage extends BasePage {
 
         return this;
     }
-
-
-
-    //private final By paramsBtn = By.cssSelector(".dropdown-filter__btn.dropdown-filter__btn--sorter");
-// private final By sortingBtn = By.cssSelector("div[class='wrapper'] li:nth-child(2) div:nth-child(1) span:nth-child(1)");
-
-
-
-    //public WbProductsListPage chooseTheParam() {
-//
-//        WebElement checkParamsBtn = driver.findElement(paramsBtn);
-//        waitElementIsVisible(checkParamsBtn).click();
-//
-//        WebElement sortProductsBtn = driver.findElement(sortingBtn);
-//        waitElementIsVisible(sortProductsBtn).click();
-//
-//        //Assertions.assertTrue(productCard1.isDisplayed());
-//
-//        return this;
-//    }
-
 }

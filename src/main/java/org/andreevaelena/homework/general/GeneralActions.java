@@ -3,6 +3,8 @@ package org.andreevaelena.homework.general;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class GeneralActions {
 
     public static WebDriver createDriver() {
@@ -22,6 +24,7 @@ public class GeneralActions {
         WebDriver driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         return driver;
     }
