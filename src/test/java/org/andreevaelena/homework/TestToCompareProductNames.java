@@ -10,7 +10,7 @@ public class TestToCompareProductNames extends BaseTest {
 
 
     @Test
-    public void compareProductNames() throws InterruptedException {
+    public void testProductNamesInTheCart() throws InterruptedException {
         basePage.openPage(WILDBERRIES_HOME_PAGE);
 
         wbHomePage

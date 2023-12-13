@@ -7,7 +7,7 @@ import static org.andreevaelena.homework.general.ProjectData.Urls.*;
 public class TestToCompareTheNumberOfProducts extends BaseTest {
 
     @Test
-    public void compareNumOfProducts() throws InterruptedException {
+    public void testNumOfProductsInTheCart() throws InterruptedException {
 
         basePage.openPage(WILDBERRIES_HOME_PAGE);
 
