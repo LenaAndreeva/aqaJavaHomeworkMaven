@@ -1,3 +1,5 @@
+package org.andreevaelena.homework;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
