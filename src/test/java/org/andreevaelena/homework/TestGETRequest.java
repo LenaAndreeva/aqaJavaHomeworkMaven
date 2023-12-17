@@ -1,30 +1,27 @@
 package org.andreevaelena.homework;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
 public class TestGETRequest {
+    private final String REQUEST_URL = "https://postman-echo.com";
+
     @Test
     public void testGETRequest() {
-        String baseUrl = "https://postman-echo.com/get?foo1=bar1&foo2=bar2";
+        given()
+                .param("foo1", "bar1")
+                .param("foo2", "bar2")
 
-        Response response = RestAssured.get(baseUrl);
+                .when()
+                .get(REQUEST_URL + "/get")
 
-        int statusCode = response.getStatusCode();
-        Assertions.assertEquals(200, statusCode, "Incorrect status code");
-
-        statusCode = response.getStatusCode();
-
-        String responseBody = response.getBody().asString();
-        Assertions.assertTrue(responseBody.contains("\"foo1\": \"bar1\""), "Incorrect response body");
-        Assertions.assertTrue(responseBody.contains("\"foo2\": \"bar2\""), "Incorrect response body");
-
-        responseBody = response.getBody().asString();
-
-        System.out.println("Response Code: " + statusCode);
-        System.out.println("Response Body: " + responseBody);
+                .then()
+                .statusCode(200)
+                .body("args.foo1", equalTo("bar1"))
+                .body("args.foo2", equalTo("bar2"))
+                .log().body()
+                .log().status();
     }
 }
-
