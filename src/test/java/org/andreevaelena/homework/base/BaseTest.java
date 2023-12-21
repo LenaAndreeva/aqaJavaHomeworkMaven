@@ -14,7 +14,7 @@ public class BaseTest {
     protected GoogleCalculatorPage googleCalculatorPage = new GoogleCalculatorPage(driver);
 
     @BeforeEach
-    public void setup() {
+    public void setUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "TECNO KI5q");
@@ -28,7 +28,7 @@ public class BaseTest {
             googleCalculatorPage = new GoogleCalculatorPage(driver);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Appium server initialization failed");
+            throw new RuntimeException("Server initialization failed");
         }
     }
 

@@ -14,7 +14,7 @@ public class MultiplicationTest extends BaseTest {
                 .clickNumber3()
                 .clickMultiplyButton()
                 .clickNumber5()
-                .clickEquals();
+                .clickEqualsButton();
 
         String result = googleCalculatorPage.getDisplayedResult();
         assertEquals("15", result);

@@ -14,7 +14,7 @@ public class AdditionTest extends BaseTest {
                 .clickNumber3()
                 .clickAddButton()
                 .clickNumber5()
-                .clickEquals();
+                .clickEqualsButton();
 
         String result = googleCalculatorPage.getDisplayedResult();
         assertEquals("8", result);

@@ -14,7 +14,7 @@ public class SubtractionTest extends BaseTest {
                 .clickNumber5()
                 .clickSubtractButton()
                 .clickNumber3()
-                .clickEquals();
+                .clickEqualsButton();
 
         String result = googleCalculatorPage.getDisplayedResult();
         assertEquals("2", result);

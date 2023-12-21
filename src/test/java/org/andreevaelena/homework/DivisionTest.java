@@ -14,7 +14,7 @@ public class DivisionTest extends BaseTest {
                 .clickNumber9()
                 .clickDivideButton()
                 .clickNumber3()
-                .clickEquals();
+                .clickEqualsButton();
 
         String result = googleCalculatorPage.getDisplayedResult();
         assertEquals("3", result);

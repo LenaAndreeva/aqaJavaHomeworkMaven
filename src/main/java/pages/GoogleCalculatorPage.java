@@ -64,7 +64,7 @@ public class GoogleCalculatorPage extends BasePage {
         return this;
     }
 
-    public GoogleCalculatorPage clickEquals() {
+    public GoogleCalculatorPage clickEqualsButton() {
         driver.findElement(getEqBtn).click();
 
         return this;
