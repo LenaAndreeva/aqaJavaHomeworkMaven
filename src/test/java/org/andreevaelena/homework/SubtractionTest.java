@@ -1,5 +1,8 @@
 package org.andreevaelena.homework;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.andreevaelena.homework.base.BaseTest;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SubtractionTest extends BaseTest {
 
     @Test
+    @Feature("Calculator")
+    @Story("Subtraction")
+    @Description("Test for subtracting two integers")
     public void testSubtraction() {
 
         googleCalculatorPage
