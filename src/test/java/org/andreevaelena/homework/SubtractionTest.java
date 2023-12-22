@@ -6,6 +6,8 @@ import io.qameta.allure.Story;
 import org.andreevaelena.homework.base.BaseTest;
 import org.junit.jupiter.api.Test;
 
+import io.qameta.allure.Story;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SubtractionTest extends BaseTest {
